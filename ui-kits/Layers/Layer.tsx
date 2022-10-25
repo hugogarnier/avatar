@@ -19,7 +19,5 @@ export const Layer = ({
 }: LayerProps): ReactElement => {
   return (
     LayerList[name] && LayerList[name]({ ...props })
-    // ||
-    // LayerList.magnifyingGlass({ width: 20, ...props })
   );
 };

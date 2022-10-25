@@ -16,12 +16,7 @@ export const Navbar: NextPage = () => {
       <ul className="flex items-center space-x-3">
         <li className="">
           <Link href="/">
-            <a
-              className="transition hover:text-teal-600 dark:hover:text-teal-500"
-              href=""
-            >
               home
-            </a>
           </Link>
         </li>
         {/* <li>
