@@ -1,7 +1,6 @@
-import type { NextPage } from "next";
 import Link from "next/link";
 
-const Home: NextPage = () => {
+export default function Page() {
   return (
     <div className=" w-2/3 h-2/3 flex flex-col justify-between items-center p-40">
       <Link
@@ -18,6 +17,4 @@ const Home: NextPage = () => {
       </Link>
     </div>
   );
-};
-
-export default Home;
+}

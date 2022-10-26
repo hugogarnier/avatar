@@ -4,8 +4,7 @@ import * as LayerList from "./list";
 
 export type LayerProps = {
   color?: string;
-  name: keyof typeof LayerList;
-  // style?: ViewStyle;
+  name?: keyof typeof LayerList;
   height?: string | number;
   width?: string | number;
   className?: string;
@@ -17,7 +16,5 @@ export const Layer = ({
   name = "notionBase",
   ...props
 }: LayerProps): ReactElement => {
-  return (
-    LayerList[name] && LayerList[name]({ ...props })
-  );
+  return LayerList[name] && LayerList[name]({ ...props });
 };

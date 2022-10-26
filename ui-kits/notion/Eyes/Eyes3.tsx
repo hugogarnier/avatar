@@ -1,8 +1,8 @@
 import React, { ReactElement } from "react";
 
-import { LayerProps } from "../Layer";
+import { LayerProps } from "../../Layers/Layer";
 
-export const NotionEyes3 = ({
+export const Eyes3 = ({
   color = "black",
   height = 0,
   width = 0,
