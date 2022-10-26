@@ -1,16 +1,17 @@
 import type { NextPage } from "next";
-import {useState} from "react";
+import { useState } from "react";
 
 import { Layer } from "../ui-kits/Layers";
-import {handleNumber} from "../utils/functions";
+import { handleNumber } from "../utils/functions";
+import { Eyes } from "../ui-kits/notion";
 
 const Notion: NextPage = () => {
-  const [bodyNumber, setBodyNumber] = useState<number>(1)
+  const [eyesNumber, setEyesNumber] = useState<number>(1);
   const size = 200;
 
   const handleClick = () => {
-    setBodyNumber(handleNumber(bodyNumber, 2))
-  }
+    setEyesNumber(handleNumber(eyesNumber, 2));
+  };
 
   return (
     <section className="flex flex-col justify-between items-center">
@@ -19,17 +20,12 @@ const Notion: NextPage = () => {
         <div className="z-50 relative">
           <Layer name="notionBase" width={size} height={size} />
           <Layer
-            name={`notionBody${bodyNumber}`}
+            name={`notionBody1`}
             width={size * 1.25}
             height={size}
             className="absolute -bottom-[5.05rem] -right-[1.60rem]"
           />
-          <Layer
-            name="notionEyes1"
-            width={size / 1.8181}
-            height={size / 1.8181}
-            className="absolute top-0 left-[3.2rem]"
-          />
+          <Eyes variant={eyesNumber} />
           {/* <Layer
           name="notionAccessories1"
           width={size / 1.538461}
@@ -68,9 +64,10 @@ const Notion: NextPage = () => {
           />
         </div>
       </div>
-      <button onClick={handleClick} className={"bg-slate-500 p-4 rounded"}>{bodyNumber}</button>
+      <button onClick={handleClick} className={"bg-slate-500 p-4 rounded"}>
+        {eyesNumber}
+      </button>
     </section>
-
   );
 };
 
