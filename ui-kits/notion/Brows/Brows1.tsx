@@ -1,24 +1,23 @@
 import React, { ReactElement } from "react";
 
-import { LayerProps } from "../Layer";
+import { LayerProps } from "../../type";
 
-export const NotionBrows1 = ({
+export const Brows1 = ({
   color = "black",
-  height = 0,
-  width = 0,
   className,
-}: Omit<LayerProps, "name">): ReactElement => {
+  style,
+}: LayerProps): ReactElement => {
   const dimensions = { width: 325, height: 71 };
-  const cHeight = height;
-  const cWidth = width;
+
   return (
     <svg
-      width={cWidth || dimensions.width}
-      height={cHeight || dimensions.height}
+      width={dimensions.width}
+      height={dimensions.height}
       viewBox="0 0 325 71"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
+      style={style}
     >
       <path
         d="M15.0519 39.028C23.6959 24.628 36.9679 20.386 51.8159 18.9C75.0479 16.574 95.7159 27.425 117.67 31.662C125.628 33.198 124.457 39.213 119.121 42.431C109.712 48.105 99.6109 53.483 87.9139 49.478C65.4139 41.773 42.7639 37.425 19.3409 45.278C13.1109 47.372 14.2819 43.345 15.0519 39.028Z"

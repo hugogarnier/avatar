@@ -1,24 +1,22 @@
 import React, { ReactElement } from "react";
 
-import { LayerProps } from "../../Layers/Layer";
+import { LayerProps } from "../../type";
 
 export const Eyes3 = ({
   color = "black",
-  height = 0,
-  width = 0,
   className,
-}: Omit<LayerProps, "name">): ReactElement => {
+  style,
+}: LayerProps): ReactElement => {
   const dimensions = { width: 510, height: 165 };
-  const cHeight = height;
-  const cWidth = width;
   return (
     <svg
-      width={cWidth || dimensions.width}
-      height={cHeight || dimensions.height}
+      width={dimensions.width}
+      height={dimensions.height}
       viewBox="0 0 510 165"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
+      style={style}
     >
       <path
         d="M215.129 76.6352C220.116 64.5972 224.019 47.2352 239.214 54.1202C259.893 63.4932 253.072 84.8462 248.89 101.481C247.312 107.758 234.37 117.393 230.636 115.837C214.348 109.046 211.371 94.0952 215.129 76.6352Z"

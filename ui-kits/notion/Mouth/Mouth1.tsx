@@ -1,24 +1,23 @@
 import React, { ReactElement } from "react";
 
-import { LayerProps } from "../Layer";
+import { LayerProps } from "../../type";
 
-export const NotionMouth1 = ({
+export const Mouth1 = ({
   color = "black",
-  height = 0,
-  width = 0,
   className,
-}: Omit<LayerProps, "name">): ReactElement => {
+  style,
+}: LayerProps): ReactElement => {
   const dimensions = { width: 255, height: 157 };
-  const cHeight = height;
-  const cWidth = width;
+
   return (
     <svg
-      width={cWidth || dimensions.width}
-      height={cHeight || dimensions.height}
+      width={dimensions.width}
+      height={dimensions.height}
       viewBox="0 0 255 157"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
+      style={style}
     >
       <path
         d="M104.419 64.3752C89.7248 69.2942 88.6958 72.8242 95.7598 86.3372C99.8878 94.2372 106.26 99.6032 112.83 104.814C142.469 128.334 184.48 117.921 204.56 91.9992C210.796 83.9848 211.238 72.8896 205.66 64.4042C200.237 56.2782 191.826 60.9812 184.808 63.7472C180.288 65.5292 175.659 65.1532 171.055 65.7092C149.367 68.3312 128.032 60.6622 104.419 64.3752Z"

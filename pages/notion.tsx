@@ -1,72 +1,96 @@
 import type { NextPage } from "next";
 import { useState } from "react";
 
-import { Layer } from "../ui-kits/Layers";
 import { handleNumber } from "../utils/functions";
-import { Eyes } from "../ui-kits/notion";
+import { ButtonAvatar, NotionAvatar } from "../components";
 
 const Notion: NextPage = () => {
-  const [eyesNumber, setEyesNumber] = useState<number>(1);
-  const size = 200;
+  const [bodyNumber, setBodyNumber] = useState<number>(1);
+  const [hairNumber, setHairNumber] = useState<number>(1);
+  const [eyesNumber, setEyesNumber] = useState<number>(2);
+  const [browsNumber, setBrowsNumber] = useState<number>(1);
+  const [noseNumber, setNoseNumber] = useState<number>(1);
+  const [mouthNumber, setMouthNumber] = useState<number>(1);
+  const [beardNumber, setBeardNumber] = useState<number>(3);
+  const [handNumber, setHandNumber] = useState<number>(0);
 
-  const handleClick = () => {
-    setEyesNumber(handleNumber(eyesNumber, 2));
-  };
+  const buttonData = [
+    {
+      id: "bodyID",
+      onClick: () => {
+        setBodyNumber(handleNumber(bodyNumber, 3));
+      },
+      variant: bodyNumber,
+    },
+    {
+      id: "hairID",
+      onClick: () => {
+        setHairNumber(handleNumber(hairNumber, 16));
+      },
+      variant: hairNumber,
+    },
+    {
+      id: "eyesID",
+      onClick: () => {
+        setEyesNumber(handleNumber(eyesNumber, 3));
+      },
+      variant: eyesNumber,
+    },
+    {
+      id: "browsID",
+      onClick: () => {
+        setBrowsNumber(handleNumber(browsNumber, 3));
+      },
+      variant: browsNumber,
+    },
+    {
+      id: "noseID",
+      onClick: () => {
+        setNoseNumber(handleNumber(noseNumber, 3));
+      },
+      variant: noseNumber,
+    },
+    {
+      id: "mouthID",
+      onClick: () => {
+        setMouthNumber(handleNumber(mouthNumber, 3));
+      },
+      variant: mouthNumber,
+    },
+    {
+      id: "beardID",
+      onClick: () => {
+        setBeardNumber(handleNumber(beardNumber, 3));
+      },
+      variant: beardNumber,
+    },
+    {
+      id: "handID",
+      onClick: () => {
+        setHandNumber(handleNumber(handNumber, 10));
+      },
+      variant: handNumber,
+    },
+  ];
 
   return (
-    <section className="flex flex-col justify-between items-center">
-      <div>sds</div>
-      <div className="w-2/3 h-2/3 flex flex-col justify-between items-center p-40">
-        <div className="z-50 relative">
-          <Layer name="notionBase" width={size} height={size} />
-          <Layer
-            name={`notionBody1`}
-            width={size * 1.25}
-            height={size}
-            className="absolute -bottom-[5.05rem] -right-[1.60rem]"
-          />
-          <Eyes variant={eyesNumber} />
-          {/* <Layer
-          name="notionAccessories1"
-          width={size / 1.538461}
-          height={size / 1.538461}
-          className="absolute -top-[3.2rem] left-[3.1rem]"
-        /> */}
-          <Layer
-            name="notionHair1"
-            width={size}
-            height={size}
-            className="absolute -top-[3.3rem] -left-[0.65rem]"
-          />
-          <Layer
-            name="notionBrows1"
-            width={size / 2.857142}
-            height={size / 2.857142}
-            className="absolute top-[0.3rem] left-[5.5rem]"
-          />
-          <Layer
-            name="notionNose1"
-            width={size / 4}
-            height={size / 4}
-            className="absolute top-[2rem] left-[6rem]"
-          />
-          <Layer
-            name="notionMouth1"
-            width={size / 4}
-            height={size / 4}
-            className="absolute top-[4.1rem] left-[5.5rem]"
-          />
-          <Layer
-            name="notionBeard1"
-            width={size / 2.5}
-            height={size / 2.5}
-            className="absolute top-[3.26rem] left-[4.1rem]"
-          />
-        </div>
-      </div>
-      <button onClick={handleClick} className={"bg-slate-500 p-4 rounded"}>
-        {eyesNumber}
-      </button>
+    <section className="flex flex-col items-center">
+      <section className="flex flex-wrap justify-evenly items-center gap-2 w-64 md:w-full">
+        {buttonData.map(({ id, onClick, variant }) => (
+          <ButtonAvatar key={id} onClick={onClick} variant={variant} />
+        ))}
+      </section>
+      <NotionAvatar
+        bodyNumber={bodyNumber}
+        hairNumber={hairNumber}
+        browsNumber={browsNumber}
+        eyesNumber={eyesNumber}
+        noseNumber={noseNumber}
+        mouthNumber={mouthNumber}
+        beardNumber={beardNumber}
+        handNumber={handNumber}
+      />
+      <div className="flex mt-20">sddsqd</div>
     </section>
   );
 };

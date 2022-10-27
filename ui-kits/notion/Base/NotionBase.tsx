@@ -1,24 +1,25 @@
 import React, { ReactElement } from "react";
 
-import { LayerProps } from "./../Layer";
+import { LayerProps } from "../../type";
 
 export const NotionBase = ({
   color = "black",
-  height = 0,
-  width = 0,
   className,
-}: Omit<LayerProps, "name">): ReactElement => {
+}: LayerProps): ReactElement => {
   const dimensions = { width: 602, height: 994 };
-  const cHeight = height;
-  const cWidth = width;
   return (
     <svg
-      width={cWidth || dimensions.width}
-      height={cHeight || dimensions.height}
+      width={dimensions.width}
+      height={dimensions.height}
       viewBox="0 0 602 994"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
+      style={{
+        width: "100%",
+        height: "100%",
+        position: "absolute",
+      }}
     >
       <path
         d="M553.906 727.724C454.844 1024.63 190.203 1116.32 50.2706 747.543C31.0276 696.826 81.3422 677.951 116.529 655.635C140.631 640.348 153.292 627.093 151.824 613.426C144.896 548.951 114.903 369.572 114.903 369.572L111.852 363.793C111.852 363.793 112.583 362.173 109.712 365.038C106.72 368.025 99.8187 399.214 72.6216 399.214C48.2378 399.214 23.4826 388.314 11.6362 312.886C7.34855 285.589 9.78156 214.025 39.9891 201.102C52.4717 195.763 63.9876 193.854 75.2219 200.263C86.4561 206.671 62.2604 178.357 187.209 74.2317C268.427 6.54886 396.717 -3.37083 448.484 8.05669C500.25 19.4842 552.016 44.8236 574.912 98.4834C602.694 163.593 549.029 212.759 560.816 361.042C558.668 414.617 561.743 532.198 414.314 571.607C386.313 579.093 395 620 437 630C504 651 553.959 702.268 553.959 727.859"

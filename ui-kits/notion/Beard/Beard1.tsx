@@ -1,24 +1,23 @@
 import React, { ReactElement } from "react";
 
-import { LayerProps } from "../Layer";
+import { LayerProps } from "../../type";
 
-export const NotionBeard1 = ({
+export const Beard1 = ({
   color = "black",
-  height = 0,
-  width = 0,
   className,
-}: Omit<LayerProps, "name">): ReactElement => {
+  style,
+}: LayerProps): ReactElement => {
   const dimensions = { width: 449, height: 312 };
-  const cHeight = height;
-  const cWidth = width;
+
   return (
     <svg
-      width={cWidth || dimensions.width}
-      height={cHeight || dimensions.height}
+      width={dimensions.width}
+      height={dimensions.height}
       viewBox="0 0 449 312"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
+      style={style}
     >
       <path
         fillRule="evenodd"

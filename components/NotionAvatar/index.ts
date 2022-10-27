@@ -1,0 +1,1 @@
+export { NotionAvatar } from "./NotionAvatar";

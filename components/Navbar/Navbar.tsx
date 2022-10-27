@@ -1,10 +1,10 @@
-import type { NextPage } from "next";
+import { FC } from "react";
 import Link from "next/link";
 // import { useTheme } from "next-themes";
 
 // import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
 
-export const Navbar: NextPage = () => {
+export const Navbar: FC = () => {
   // const { theme, setTheme } = useTheme();
 
   // const switchTheme = () => {
@@ -15,9 +15,7 @@ export const Navbar: NextPage = () => {
     <nav className="flex items-center justify-between max-w-4xl p-4 mx-auto text-sm font-medium text-gray-600 dark:text-gray-100 cursor-pointer">
       <ul className="flex items-center space-x-3">
         <li className="">
-          <Link href="/">
-              home
-          </Link>
+          <Link href="/">home</Link>
         </li>
         {/* <li>
           <Link href="/projects">
