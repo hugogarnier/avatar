@@ -32,7 +32,7 @@ export const NotionAvatar = ({
   handNumber = 1,
 }: NotionAvatarProps) => {
   return (
-    <div className="w-48 h-48 flex justify-center items-center my-24 md:w-80 md:h-80 xl:w-96 xl:h-96">
+    <div className="w-48 h-48 flex justify-center items-center my-24 md:w-80 md:h-80">
       <div
         className=""
         style={{
@@ -51,8 +51,8 @@ export const NotionAvatar = ({
         >
           <Base />
           <Body variant={bodyNumber} />
-          {(hairNumber < 15 && <Hair variant={hairNumber} />) || (
-            <Accessories />
+          {(hairNumber > 16 && <Accessories />) || (
+            <Hair variant={hairNumber} />
           )}
 
           {/* Face detail */}

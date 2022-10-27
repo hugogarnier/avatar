@@ -5,6 +5,8 @@ import { Hair12 } from "./Hair12";
 import { Hair13 } from "./Hair13";
 import { Hair14 } from "./Hair14";
 import { Hair15 } from "./Hair15";
+import { Hair16 } from "./Hair16";
+import { Hair17 } from "./Hair17";
 import { Hair2 } from "./Hair2";
 import { Hair3 } from "./Hair3";
 import { Hair4 } from "./Hair4";
@@ -55,5 +57,9 @@ export const Hair = ({ variant }: { variant: number }) => {
       return <Hair14 style={style} />;
     case 15:
       return <Hair15 style={style} />;
+    case 16:
+      return <Hair16 style={style} />;
+    case 17:
+      return <Hair17 style={style} />;
   }
 };
