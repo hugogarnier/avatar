@@ -1,3 +1,4 @@
+export { Avatar } from "./Avatar";
 export { ButtonAvatar } from "./ButtonAvatar";
 export { Footer } from "./Footer";
 export { Layout } from "./Layout";

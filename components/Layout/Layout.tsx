@@ -15,7 +15,7 @@ export const Layout: NextPage<LayoutProps> = ({ children }) => {
         <meta name="description" content="Avatar Generator" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="max-w-4xl p-4 flex justify-center m-auto min-h-screen">
+      <main className="max-w-4xl p-4 flex justify-center m-auto min-h-[90vh]">
         {children}
       </main>
       <Footer />

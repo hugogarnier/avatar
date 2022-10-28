@@ -16,56 +16,56 @@ const Notion: NextPage = () => {
 
   const buttonData = [
     {
-      id: "bodyID",
+      id: "Body",
       onClick: () => {
         setBodyNumber(handleNumber(bodyNumber, 3));
       },
       variant: bodyNumber,
     },
     {
-      id: "hairID",
+      id: "Hair",
       onClick: () => {
         setHairNumber(handleNumber(hairNumber, 16));
       },
       variant: hairNumber,
     },
     {
-      id: "eyesID",
+      id: "Eyes",
       onClick: () => {
         setEyesNumber(handleNumber(eyesNumber, 3));
       },
       variant: eyesNumber,
     },
     {
-      id: "browsID",
+      id: "Brows",
       onClick: () => {
         setBrowsNumber(handleNumber(browsNumber, 3));
       },
       variant: browsNumber,
     },
     {
-      id: "noseID",
+      id: "Nose",
       onClick: () => {
         setNoseNumber(handleNumber(noseNumber, 3));
       },
       variant: noseNumber,
     },
     {
-      id: "mouthID",
+      id: "Mouth",
       onClick: () => {
         setMouthNumber(handleNumber(mouthNumber, 3));
       },
       variant: mouthNumber,
     },
     {
-      id: "beardID",
+      id: "Beard",
       onClick: () => {
         setBeardNumber(handleNumber(beardNumber, 3));
       },
       variant: beardNumber,
     },
     {
-      id: "handID",
+      id: "Hand",
       onClick: () => {
         setHandNumber(handleNumber(handNumber, 10));
       },
@@ -75,9 +75,9 @@ const Notion: NextPage = () => {
 
   return (
     <section className="flex flex-col items-center">
-      <section className="flex flex-wrap justify-evenly items-center gap-2 w-64 md:w-full">
+      <section className="flex flex-wrap justify-between items-center w-64 gap-3 md:w-full">
         {buttonData.map(({ id, onClick, variant }) => (
-          <ButtonAvatar key={id} onClick={onClick} variant={variant} />
+          <ButtonAvatar key={id} onClick={onClick} variant={variant} id={id} />
         ))}
       </section>
       <NotionAvatar
